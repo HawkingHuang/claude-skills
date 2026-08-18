@@ -1,0 +1,16 @@
+{
+  "$schema": "https://www.schemastore.org/claude-code-marketplace.json",
+  "name": "claude-skills",
+  "description": "Hawking's personal Claude Code skills",
+  "owner": {
+    "name": "Hawking Huang"
+  },
+  "plugins": [
+    {
+      "name": "claude-skills",
+      "description": "Hawking's personal Claude Code skills",
+      "source": "./",
+      "category": "productivity"
+    }
+  ]
+}
