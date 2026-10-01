@@ -48,7 +48,12 @@ diff 很大時先看 `--stat` 判斷主要動到哪些模組，再挑重點檔�
 
 ### 4. 給使用者確認
 
-先用 code block 完整顯示 message（subject、body 分行），再用可點選的選項（例如 AskUserQuestion）讓使用者確認，選項只需簡短標示動作（如「確認 commit」「修改 message」），不要把整段 message 塞進選項文字裡。不要只用文字要求使用者手動輸入「是」之類的回覆。
+**這兩步缺一不可，且順序固定：**
+
+1. 在對話文字裡用 code block 完整顯示 message（subject、body 分行）——這是給使用者看的，不能省略、也不能只寫在選項說明裡
+2. 接著才用可點選的選項（例如 AskUserQuestion）讓使用者確認，選項只需簡短標示動作（如「確認 commit」「修改 message」），不要把整段 message 塞進選項文字裡
+
+呼叫確認用的工具之前，檢查這則回覆裡是否已經有 code block——沒有就先補上再問。不要只用文字要求使用者手動輸入「是」之類的回覆。
 
 **不要在使用者確認前執行 `git commit`。**
 
@@ -75,8 +80,9 @@ body（選用）
 - 冒號後小寫開頭
 - 結尾不加句號
 - 控制在 50 字元內，最多不超過 72
+- 預設只寫 subject，不加 body；除非變更複雜到 subject 講不清楚，或使用者明確要求要詳細內容，才額外寫 body
 
-**body** — 一律英文。只在「為什麼這樣改」不明顯的時候才寫。純粹重述 subject 的 body 不如不寫。有寫的話與 subject 之間空一行，每行不超過 72 字元。
+**body** — 一律英文。有寫的話與 subject 之間空一行，每行不超過 72 字元。
 
 不要加任何署名或工具標記的 footer（`Co-Authored-By`、`Generated with` 之類的）。
 
